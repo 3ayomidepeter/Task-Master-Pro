@@ -52,9 +52,12 @@ const VitalTask = () => {
     try {
       const token = localStorage.getItem("token");
       // Use 127.0.0.1 to avoid localhost issues
-      const res = await axios.get("http://127.0.0.1:5000/api/tasks", {
-        headers: { Authorization: `Bearer ${token}` },
-      });
+      const res = await axios.get(
+        "https://task-master-api-u5xy.onrender.com/api/tasks",
+        {
+          headers: { Authorization: `Bearer ${token}` },
+        },
+      );
       setTasks(res.data);
     } catch (error) {
       console.error("Error fetching tasks:", error);
@@ -84,9 +87,12 @@ const VitalTask = () => {
     if (window.confirm("Are you sure you want to delete this task?")) {
       try {
         const token = localStorage.getItem("token");
-        await axios.delete(`http://127.0.0.1:5000/api/tasks/${id}`, {
-          headers: { Authorization: `Bearer ${token}` },
-        });
+        await axios.delete(
+          `https://task-master-api-u5xy.onrender.com/api/tasks/${id}`,
+          {
+            headers: { Authorization: `Bearer ${token}` },
+          },
+        );
         fetchTasks(); // Refresh the list
       } catch (error) {
         console.error("Error deleting task:", error);

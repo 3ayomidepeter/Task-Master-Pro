@@ -33,7 +33,7 @@ const Settings = () => {
     try {
       const token = localStorage.getItem("token");
       const res = await axios.put(
-        "http://127.0.0.1:5000/api/auth/profile",
+        "https://task-master-api-u5xy.onrender.com/api/auth/profile",
         formData,
         {
           headers: { Authorization: `Bearer ${token}` },

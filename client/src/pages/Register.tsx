@@ -30,11 +30,14 @@ const Register = () => {
     setLoading(true);
     try {
       // Register the user
-      const res = await axios.post("http://127.0.0.1:5000/api/auth/register", {
-        fullName: formData.fullName,
-        email: formData.email,
-        password: formData.password,
-      });
+      const res = await axios.post(
+        "https://task-master-api-u5xy.onrender.com/api/auth/register",
+        {
+          fullName: formData.fullName,
+          email: formData.email,
+          password: formData.password,
+        },
+      );
 
       // Save token & redirect
       localStorage.setItem("token", res.data.token);

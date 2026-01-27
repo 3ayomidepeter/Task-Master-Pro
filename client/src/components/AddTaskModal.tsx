@@ -81,13 +81,17 @@ const AddTaskModal = ({
       if (taskToEdit) {
         // 👈 EDIT MODE: Update existing task (PUT)
         await axios.put(
-          `http://127.0.0.1:5000/api/tasks/${taskToEdit._id}`,
+          `https://task-master-api-u5xy.onrender.com/api/tasks/${taskToEdit._id}`,
           formData,
           config,
         );
       } else {
         // 👈 CREATE MODE: Create new task (POST)
-        await axios.post("http://127.0.0.1:5000/api/tasks", formData, config);
+        await axios.post(
+          "https://task-master-api-u5xy.onrender.com/api/tasks",
+          formData,
+          config,
+        );
       }
 
       onTaskAdded();
