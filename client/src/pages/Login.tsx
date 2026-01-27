@@ -29,10 +29,10 @@ const Login = () => {
 
   return (
     <div className="flex min-h-screen bg-gray-50">
-      {/* 🖼️ LEFT SIDE: Nice Image (Hidden on mobile) */}
-      <div className="hidden md:flex w-1/2 bg-red-400 items-center justify-center relative overflow-hidden">
-        {/* Decorative Circle */}
-        <div className="absolute top-0 left-0 w-full h-full bg-gradient-to-br from-red-400 to-pink-500 opacity-90 z-10"></div>
+      {/* 🖼️ LEFT SIDE: Uniform Gradient */}
+      <div className="hidden md:flex w-1/2 bg-rose-500 items-center justify-center relative overflow-hidden">
+        {/* Gradient matches the button color now */}
+        <div className="absolute top-0 left-0 w-full h-full bg-gradient-to-br from-rose-500 to-rose-600 opacity-90 z-10"></div>
         <img
           src="https://images.unsplash.com/photo-1484480974693-6ca0a78fb36b?q=80&w=2072&auto=format&fit=crop"
           alt="Productivity"
@@ -46,7 +46,7 @@ const Login = () => {
         </div>
       </div>
 
-      {/* 📝 RIGHT SIDE: Form */}
+      {/* 📝 RIGHT SIDE */}
       <div className="w-full md:w-1/2 flex items-center justify-center p-8">
         <div className="w-full max-w-md bg-white p-8 rounded-2xl shadow-lg border border-gray-100">
           <div className="text-center mb-8">
@@ -75,7 +75,7 @@ const Login = () => {
                   placeholder="Enter your email"
                   required
                   onChange={handleChange}
-                  className="w-full pl-10 pr-4 py-3 border rounded-lg focus:ring-2 focus:ring-red-400 outline-none transition"
+                  className="w-full pl-10 pr-4 py-3 border rounded-lg focus:ring-2 focus:ring-rose-500 outline-none transition"
                 />
               </div>
             </div>
@@ -92,14 +92,14 @@ const Login = () => {
                   placeholder="Enter your password"
                   required
                   onChange={handleChange}
-                  className="w-full pl-10 pr-4 py-3 border rounded-lg focus:ring-2 focus:ring-red-400 outline-none transition"
+                  className="w-full pl-10 pr-4 py-3 border rounded-lg focus:ring-2 focus:ring-rose-500 outline-none transition"
                 />
               </div>
             </div>
 
             <button
               type="submit"
-              className="w-full bg-red-400 text-white py-3 rounded-lg font-bold hover:bg-red-500 transition shadow-md hover:shadow-lg transform hover:-translate-y-0.5"
+              className="w-full bg-rose-500 text-white py-3 rounded-lg font-bold hover:bg-rose-600 transition shadow-md hover:shadow-lg transform hover:-translate-y-0.5"
             >
               Sign In
             </button>
@@ -109,7 +109,7 @@ const Login = () => {
             Don't have an account?{" "}
             <Link
               to="/register"
-              className="text-red-500 font-bold hover:underline"
+              className="text-rose-500 font-bold hover:underline"
             >
               Sign up
             </Link>

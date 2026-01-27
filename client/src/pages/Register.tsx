@@ -29,7 +29,6 @@ const Register = () => {
 
     setLoading(true);
     try {
-      // Register the user
       const res = await axios.post(
         "https://task-master-api-u5xy.onrender.com/api/auth/register",
         {
@@ -39,7 +38,6 @@ const Register = () => {
         },
       );
 
-      // Save token & redirect
       localStorage.setItem("token", res.data.token);
       localStorage.setItem("user", JSON.stringify(res.data));
       navigate("/dashboard");
@@ -52,9 +50,10 @@ const Register = () => {
 
   return (
     <div className="flex min-h-screen bg-gray-50">
-      {/* 🖼️ LEFT SIDE: Inspirational Image */}
-      <div className="hidden md:flex w-1/2 bg-red-400 items-center justify-center relative overflow-hidden">
-        <div className="absolute top-0 left-0 w-full h-full bg-gradient-to-br from-red-400 to-orange-500 opacity-90 z-10"></div>
+      {/* 🖼️ LEFT SIDE: Uniform Gradient */}
+      <div className="hidden md:flex w-1/2 bg-rose-500 items-center justify-center relative overflow-hidden">
+        {/* Same Gradient as Login Page */}
+        <div className="absolute top-0 left-0 w-full h-full bg-gradient-to-br from-rose-500 to-rose-600 opacity-90 z-10"></div>
         <img
           src="https://images.unsplash.com/photo-1517842645767-c639042777db?q=80&w=2070&auto=format&fit=crop"
           alt="Planning"
@@ -69,7 +68,7 @@ const Register = () => {
         </div>
       </div>
 
-      {/* 📝 RIGHT SIDE: Registration Form */}
+      {/* 📝 RIGHT SIDE */}
       <div className="w-full md:w-1/2 flex items-center justify-center p-8">
         <div className="w-full max-w-md bg-white p-8 rounded-2xl shadow-lg border border-gray-100">
           <div className="text-center mb-8">
@@ -99,7 +98,7 @@ const Register = () => {
                   placeholder="John Doe"
                   required
                   onChange={handleChange}
-                  className="w-full pl-10 pr-4 py-3 border rounded-lg focus:ring-2 focus:ring-red-400 outline-none transition"
+                  className="w-full pl-10 pr-4 py-3 border rounded-lg focus:ring-2 focus:ring-rose-500 outline-none transition"
                 />
               </div>
             </div>
@@ -117,7 +116,7 @@ const Register = () => {
                   placeholder="john@example.com"
                   required
                   onChange={handleChange}
-                  className="w-full pl-10 pr-4 py-3 border rounded-lg focus:ring-2 focus:ring-red-400 outline-none transition"
+                  className="w-full pl-10 pr-4 py-3 border rounded-lg focus:ring-2 focus:ring-rose-500 outline-none transition"
                 />
               </div>
             </div>
@@ -135,7 +134,7 @@ const Register = () => {
                   placeholder="Create a password"
                   required
                   onChange={handleChange}
-                  className="w-full pl-10 pr-4 py-3 border rounded-lg focus:ring-2 focus:ring-red-400 outline-none transition"
+                  className="w-full pl-10 pr-4 py-3 border rounded-lg focus:ring-2 focus:ring-rose-500 outline-none transition"
                 />
               </div>
             </div>
@@ -153,7 +152,7 @@ const Register = () => {
                   placeholder="Confirm your password"
                   required
                   onChange={handleChange}
-                  className="w-full pl-10 pr-4 py-3 border rounded-lg focus:ring-2 focus:ring-red-400 outline-none transition"
+                  className="w-full pl-10 pr-4 py-3 border rounded-lg focus:ring-2 focus:ring-rose-500 outline-none transition"
                 />
               </div>
             </div>
@@ -161,7 +160,7 @@ const Register = () => {
             <button
               type="submit"
               disabled={loading}
-              className="w-full bg-red-400 text-white py-3 rounded-lg font-bold hover:bg-red-500 transition shadow-md hover:shadow-lg transform hover:-translate-y-0.5 disabled:opacity-50 disabled:cursor-not-allowed"
+              className="w-full bg-rose-500 text-white py-3 rounded-lg font-bold hover:bg-rose-600 transition shadow-md hover:shadow-lg transform hover:-translate-y-0.5 disabled:opacity-50 disabled:cursor-not-allowed"
             >
               {loading ? "Creating Account..." : "Sign Up"}
             </button>
@@ -171,7 +170,7 @@ const Register = () => {
             Already have an account?{" "}
             <Link
               to="/login"
-              className="text-red-500 font-bold hover:underline"
+              className="text-rose-500 font-bold hover:underline"
             >
               Log in
             </Link>
